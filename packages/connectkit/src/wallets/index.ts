@@ -19,9 +19,11 @@ import { family } from './connectors/family';
 import { frame } from './connectors/frame';
 import { phantom } from './connectors/phantom';
 import { dawn } from './connectors/dawn';
+import { okx } from './connectors/okx';
 
 export const getWallets = () => {
   return [
+    okx(),
     injected(),
     walletConnect(),
     metaMask(),
@@ -34,6 +36,7 @@ export const getWallets = () => {
     rainbow(),
     unstoppable(),
     onto(),
+  
     steak(),
     frontier(),
     zerion(),

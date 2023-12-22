@@ -174,6 +174,52 @@ if (typeof window != 'undefined') {
       },
     },
     {
+      id: 'okex',
+      name: 'OKX Wallet',
+      logos: {
+        default: <Logos.OKX background />,
+        mobile: <Logos.OKX background />,
+        transparent: (
+          <div
+            style={{
+              transform: 'scale(0.86)',
+              position: 'relative',
+              width: '100%',
+            }}
+          >
+            <Logos.OKX />
+          </div>
+        ),
+        connectorButton: (
+          <div
+            style={{
+              transform: 'scale(1.1)',
+            }}
+          >
+            <Logos.OKX />
+          </div>
+        ),
+      },
+      logoBackground:
+        'linear-gradient(0deg, var(--ck-brand-metamask-12), var(--ck-brand-metamask-11))',
+      scannable: false,
+      // defaultConnect:  () => {},
+      extensions: {
+        chrome:
+          'https://chrome.google.com/webstore/detail/okx-wallet/mcohilncbfahbmgdjkbpemcciiolgcge',
+        brave:
+          'https://chrome.google.com/webstore/detail/okx-wallet/mcohilncbfahbmgdjkbpemcciiolgcge',
+        edge: 'https://microsoftedge.microsoft.com/addons/detail/okx-wallet/pbpjkcldjiffchgbbndmhojiacbgflha',
+      } as IDictionary,
+      appUrls: {
+        download: 'https://connect.family.co/v0/download/okx',
+        website: 'https://www.okx.com/download/',
+        android:
+          'https://play.google.com/store/apps/details?id=com.okinc.okex.gp',
+        ios: 'https://apps.apple.com/us/app/okx-buy-bitcoin-eth-crypto/id1327268470',
+      } as IDictionary,
+    },
+    {
       id: 'coinbaseWallet',
       name: 'Coinbase Wallet',
       shortName: 'Coinbase',

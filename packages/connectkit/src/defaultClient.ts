@@ -93,13 +93,36 @@ const getDefaultConnectors = ({
         UNSTABLE_shimOnConnectSelectAccount: true,
       },
     }),
-    new CoinbaseWalletConnector({
-      chains,
-      options: {
-        appName: app.name,
-        headlessMode: true,
-      },
-    }),
+    // new CoinbaseWalletConnector({
+    //   chains,
+    //   options: {
+    //     appName: app.name,
+    //     headlessMode: true,
+    //   },
+    // }),
+
+    walletConnectProjectId
+      ? new WalletConnectConnector({
+          chains,
+          options: {
+            showQrModal: false,
+            projectId: walletConnectProjectId,
+            metadata: hasAllAppData
+              ? {
+                  name: app.name,
+                  description: app.description!,
+                  url: app.url!,
+                  icons: [app.icon!],
+                }
+              : undefined,
+          },
+        })
+      : new WalletConnectLegacyConnector({
+          chains,
+          options: {
+            qrcode: false,
+          },
+        }),
     walletConnectProjectId
       ? new WalletConnectConnector({
           chains,

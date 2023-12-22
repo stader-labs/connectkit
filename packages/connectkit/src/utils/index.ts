@@ -180,6 +180,9 @@ export const isWalletConnectConnector = (connectorId?: string) =>
 export const isMetaMaskConnector = (connectorId?: string) =>
   connectorId === 'metaMask';
 
+  export const isOkxConnector = (connectorId?: string) =>
+  connectorId === 'okex';
+
 export const isCoinbaseWalletConnector = (connectorId?: string) =>
   connectorId === 'coinbaseWallet';
 
